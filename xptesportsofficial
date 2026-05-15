@@ -1,0 +1,245 @@
+# xptesportsofficial-
+🎯✨ ＦＲＥＥ ＦＩＲＥ  ＴＯＵＲＮＡＭＥＮＴＥ স্বাগতম! ✨🎯  🔥 এখানে আপনার স্কোয়াড অংশগ্রহণ করবে আমাদের অফিসিয়াল টুর্নামেন্টে। দয়া করে নিচের নিয়মগুলো ভালোভাবে পড়ে নিন:  📌 গ্রুপের নিয়মাবলী: 1️⃣  প্রতিদিন ডেইলি ব্লাস্ট/স্ক্রিম হবে । এন্ট্রি ফি- 35৳ 💸 মাত্র। 2️⃣ Room ID &amp; Password কেবলমাত্র অ্যাডমিন শেয়ার করবে। 3️⃣ কোন অশ্লীল/অপ্রয়োজনীয় মেসেজ পাঠানো যাবে না।
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>XPT E-SPORTS OFFICIAL — Premium Tournament Scrims</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --neon-cyan: #00f5ff;
+      --neon-red: #ff0055;
+      --bg-dark: #050a12;
+      --panel-bg: rgba(9, 18, 32, 0.6);
+      --glow-cyan: 0 0 15px rgba(0,245,255,0.4);
+      --glow-red: 0 0 15px rgba(ff,0,55,0.4);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg-dark);
+      color: #e2ecf8;
+      font-family: 'Rajdhani', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* BACKGROUND MATRIX GRID */
+    #bg-canvas {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 0; pointer-events: none;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 15px 5%;
+      background: rgba(5, 10, 18, 0.85); backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(0, 245, 255, 0.1);
+    }
+    .logo {
+      font-family: 'Orbitron', sans-serif; font-size: 1.5rem; font-weight: 900;
+      color: #fff; letter-spacing: 2px;
+    }
+    .logo span { color: var(--neon-cyan); text-shadow: var(--glow-cyan); }
+
+    /* HERO */
+    #hero {
+      position: relative; z-index: 1; min-height: 100vh;
+      display: flex; flex-direction: row; align-items: center; justify-content: space-between;
+      padding: 120px 8% 60px; gap: 40px;
+    }
+    .hero-content { flex: 1; }
+    .hero-badge {
+      display: inline-block; font-family: 'Share Tech Mono', monospace; font-size: .8rem;
+      letter-spacing: 3px; color: var(--neon-red); border: 1px solid rgba(255,0,85,0.3);
+      padding: 6px 16px; border-radius: 4px; margin-bottom: 20px; background: rgba(255,0,85,0.05);
+    }
+    .hero-title {
+      font-family: 'Orbitron', sans-serif; font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 900; line-height: 1.1; letter-spacing: 1px; color: #fff;
+    }
+    .hero-title span {
+      background: linear-gradient(90deg, var(--neon-cyan), var(--neon-red));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-sub { margin-top: 20px; font-size: 1.2rem; color: #8aa0c0; max-width: 550px; line-height: 1.6; }
+    
+    /* OWNER IMAGE FRAME */
+    .hero-image-wrap {
+      flex: 1; display: flex; justify-content: center; align-items: center; position: relative;
+    }
+    .image-frame {
+      position: relative; width: 340px; height: 340px;
+      border: 2px solid var(--neon-cyan); border-radius: 16px;
+      padding: 10px; background: rgba(0, 245, 255, 0.02);
+      box-shadow: var(--glow-cyan);
+    }
+    .image-frame img {
+      width: 100%; height: 100%; object-fit: cover; border-radius: 10px;
+    }
+    .image-frame::before {
+      content: 'FOUNDER'; position: absolute; bottom: -15px; left: 50%;
+      transform: translateX(-50%); background: var(--neon-cyan); color: #000;
+      font-family: 'Orbitron'; font-size: 0.75rem; font-weight: 900;
+      padding: 4px 15px; letter-spacing: 2px; border-radius: 4px; box-shadow: var(--glow-cyan);
+    }
+
+    /* INFO CARDS (SLOTS & FEES) */
+    #match-info {
+      position: relative; z-index: 1; padding: 40px 8%;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;
+    }
+    .info-card {
+      background: var(--panel-bg); border: 1px solid rgba(0, 245, 255, 0.15);
+      border-radius: 12px; padding: 30px; text-align: center; backdrop-filter: blur(10px);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .info-card:hover { transform: translateY(-5px); border-color: var(--neon-cyan); box-shadow: var(--glow-cyan); }
+    .card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+    .card-title { font-family: 'Orbitron'; font-size: 1.3rem; letter-spacing: 1px; color: #fff; margin-bottom: 10px; }
+    .card-detail { font-size: 1.8rem; font-weight: 700; color: var(--neon-cyan); font-family: 'Orbitron'; }
+    .card-sub { font-size: 0.95rem; color: #6e88a8; margin-top: 5px; }
+
+    /* GROUPS & COMMUNITY */
+    #community { position: relative; z-index: 1; padding: 80px 8%; text-align: center; }
+    .section-title { font-family: 'Orbitron'; font-size: 2.2rem; font-weight: 900; margin-bottom: 40px; letter-spacing: 2px; }
+    .section-title span { color: var(--neon-red); text-shadow: var(--glow-red); }
+    
+    .grid-links {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto;
+    }
+    .link-box {
+      display: flex; flex-direction: column; align-items: center; padding: 25px;
+      border-radius: 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
+      text-decoration: none; color: #fff; transition: all 0.3s;
+    }
+    .link-box i { font-size: 2.5rem; margin-bottom: 15px; }
+    .link-box span { font-family: 'Orbitron'; font-size: 1.05rem; font-weight: 700; letter-spacing: 1px; }
+    .link-box p { font-size: 0.85rem; color: #556d8c; margin-top: 5px; }
+
+    /* Specific brand colors for hover */
+    .wa-link:hover { border-color: #25d366; background: rgba(37, 211, 102, 0.05); box-shadow: 0 0 20px rgba(37, 211, 102, 0.3); }
+    .wa-link i { color: #25d366; }
+    .tg-link:hover { border-color: #0088cc; background: rgba(0, 136, 204, 0.05); box-shadow: 0 0 20px rgba(0, 136, 204, 0.3); }
+    .tg-link i { color: #0088cc; }
+
+    /* FOOTER */
+    footer {
+      position: relative; z-index: 1; border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 40px 20px; text-align: center; background: #03060b;
+    }
+    .footer-text { font-family: 'Share Tech Mono', monospace; font-size: 0.9rem; color: #405570; letter-spacing: 1px; }
+    .footer-text span { color: var(--neon-cyan); }
+    .footer-contacts { display: flex; justify-content: center; gap: 30px; margin-top: 15px; font-size: 0.95rem; color: #7e98b8; }
+    .footer-contacts strong { color: #fff; font-family: 'Orbitron'; font-size: 0.85rem; }
+
+    @media (max-width: 968px) {
+      #hero { flex-direction: column; text-align: center; padding-top: 100px; }
+      .hero-sub { margin: 20px auto 0; }
+      .image-frame { width: 280px; height: 280px; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<nav>
+  <div class="logo">XPT <span>E-SPORTS</span></div>
+  <div style="font-family: 'Share Tech Mono'; color: var(--neon-cyan); font-size: 0.8rem; letter-spacing: 2px;">// OFFICIAL_INTERFACE</div>
+</nav>
+
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🔰 XPT E-SPORTS IS WITH YOU 🔰</div>
+    <h1 class="hero-title">XPT ESPORTS<br><span>OFFICIAL</span></h1>
+    <p class="hero-sub">আমাদের এখানে প্রত্যেক দিন প্রফেশনাল টুর্নামেন্ট পাবেন। টুর্নামেন্ট স্লট অর্ডার করতে নিচে দেওয়া যেকোনো হোয়াটসঅ্যাপ বা টেলিগ্রাম গ্রুপে মেসেজ করুন। ধন্যবাদ! 💪❤️‍🔥🔥</p>
+  </div>
+  
+  <div class="hero-image-wrap">
+    <div class="image-frame">
+      <img src="1000070649.jpg" alt="XPT Founder / Owner">
+    </div>
+  </div>
+</section>
+
+<div id="match-info">
+  <div class="info-card">
+    <div class="card-icon">⏰</div>
+    <div class="card-title">DAILY SCRIMS TIME</div>
+    <div class="card-detail">03:00 PM - 11:00 PM</div>
+    <div class="card-sub">প্রতিদিন এই সময়ে স্লট সেল দেওয়া হয়</div>
+  </div>
+
+  <div class="info-card" style="border-color: rgba(255,0,85,0.15)">
+    <div class="card-icon">🪙</div>
+    <div class="card-title" style="color: #fff;">MATCH ENTRY FEE</div>
+    <div class="card-detail" style="color: var(--neon-red); text-shadow: var(--glow-red);">35 TAKA</div>
+    <div class="card-sub">বিকাশ / নগদ / রকেট প্রযোজ্য</div>
+  </div>
+</div>
+
+<section id="community">
+  <h2 class="section-title">JOIN OUR <span>COMMUNITY</span></h2>
+  
+  <div class="grid-links">
+    <a href="https://chat.whatsapp.com/F0oHDiu7Sle7Z1tzrYHJYm" target="_blank" class="link-box wa-link">
+      <i class="fab fa-whatsapp"></i>
+      <span>WHATSAPP GROUP 1</span>
+      <p>Click to join & book slots</p>
+    </a>
+    
+    <a href="https://chat.whatsapp.com/KQtZLYM3mIz94pica3Qoz1" target="_blank" class="link-box wa-link">
+      <i class="fab fa-whatsapp"></i>
+      <span>WHATSAPP GROUP 2</span>
+      <p>Click to join & book slots</p>
+    </a>
+
+    <a href="https://t.me/+e1mZ-fkAGXUzYTQ1" target="_blank" class="link-box tg-link">
+      <i class="fab fa-telegram-plane"></i>
+      <span>TELEGRAM GROUP 1</span>
+      <p>Join for instant custom codes</p>
+    </a>
+
+    <a href="https://t.me/+WLTXhkHOEMxiMmNl" target="_blank" class="link-box tg-link">
+      <i class="fab fa-telegram-plane"></i>
+      <span>TELEGRAM GROUP 2</span>
+      <p>Join for community discussion</p>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-text">© 2026 <span>XPT ESPORTS OFFICIAL</span> — DEVELOPED FOR CHAMPIONS</p>
+  <div class="footer-contacts">
+    <div><strong>WHATSAPP:</strong> +880 1777-892720</div>
+    <div><strong>TELEGRAM SUPPORT:</strong> +8801799111095</div>
+  </div>
+</footer>
+
+<script>
+  /* CYBER GRID BACKGROUND BACKGROUND JS */
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H;
+  function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+
+  function drawGrid() {
+    ctx.clearRect(0,0,W,H);
+    ctx.strokeStyle='rgba(0, 245, 255, 0.025)';
+    ctx.lineWidth = 1;
+    for(let x=0; x<W; x+=60) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+    for(let y=0; y<H; y+=60) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+    requestAnimationFrame(drawGrid);
+  }
+  drawGrid();
+</script>
+</body>
+</html>
